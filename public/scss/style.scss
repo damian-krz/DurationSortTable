@@ -1,0 +1,84 @@
+// ------------------------------------------------------- IMPORT INCLUDES //
+
+@import './mixins';
+@import './colors';
+
+// ------------------------------------------------------- RESET CSS //
+
+*,
+*::before,
+*::after { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// ------------------------------------------------------- OVERALL //
+
+html {
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  @include background-color(background-color, $veryLightGray);
+}
+
+a {
+  text-decoration: none;
+  @include color(color, $black);
+} 
+
+// ------------------------------------------------------- TABLE //
+
+.table {
+  border-spacing: 0;
+  font-size: 1.6rem;
+  @include background-color(background-color, $black);
+  @include border(border, 1.75rem, solid, $tableBorderColor);  
+  border-bottom-width: 2.5rem;
+  border-right-width: 2.5rem;
+  
+  &__th, &__tr, &__td {
+    padding: 1rem 1.5rem;
+  }
+  
+  &__tr, &__td {
+    @include border(border, .075rem, solid, $lightGray);
+  }
+
+  &__tr {
+   @include background-color(background-color, $white);
+  }
+
+  &__tr:nth-child(even) {
+    @include background-color(background-color, $veryLightGray);
+  }
+}
+
+.table-sortable .desc-sort .fa-caret-down {
+    transform: rotate(180deg);
+}
+
+// ------------------------------------------------------- INNER RADIUS //
+
+tr:last-child td:first-child {
+  @include border-radius(border-bottom-left-radius, .5rem);
+}
+tr:last-child td:last-child {
+  @include border-radius(border-bottom-right-radius, .5rem);
+}
+tr:first-child th:first-child {
+  @include border-radius(border-top-left-radius, .5rem);
+}
+tr:first-child th:last-child {
+  @include border-radius(border-top-right-radius, .5rem);
+}
+  
+  
+
+

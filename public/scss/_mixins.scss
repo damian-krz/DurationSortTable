@@ -1,0 +1,15 @@
+@mixin color($color, $colorText) {
+    #{$color}: $colorText;
+};
+
+@mixin background-color($background-color, $color) {
+    #{$background-color}: $color;
+};
+
+@mixin border($border, $thickness, $type, $color) {
+    #{$border}: $thickness $type $color;
+};
+
+@mixin border-radius($border-radius, $radius) {
+    #{$border-radius}: $radius;
+};
